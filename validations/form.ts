@@ -20,7 +20,7 @@ const initForm = (formSchema: any) => {
             _validationSchema[key] = Yup.string()
             .required().min(6,'Must be atleast 6 characters.');
         } else if(formSchema[key].type === "file"){
-            _validationSchema[key] = Yup.string();
+            _validationSchema[key] = '';
         }
 
         if(formSchema[key].required){
