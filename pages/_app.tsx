@@ -3,6 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import '@/assets/main.css';
+import '@/assets/scss/main.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App({ Component , pageProps }: AppProps) {

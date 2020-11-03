@@ -1,1 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;400&display=swap');
+.nav-item {
+    a {
+        text-transform: capitalize;
+        background-color: #fefefe;
+        position: relative;
+        display: inline;
+        padding: 15px;
+        color: #2180da;
+        font-weight: 600;
+    }
+}
+
+ul.nav,
+a span {
+    text-transform: capitalize;
+    display: block;
+    color: #fefefe;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+        background-color: #fefefe;
+        color: #363434;
+        display: block;
+        margin: 5px 0px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}

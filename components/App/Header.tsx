@@ -7,15 +7,11 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText
   } from 'reactstrap';
+import { useRouter } from "next/dist/client/router";
 
 function HeaderComponent() {
+    const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -41,22 +37,25 @@ function HeaderComponent() {
                         <li><a href="#"><i className="fa fa-linkedin"></i></a></li>
                         <li><a href="#"><i className="fa fa-dribbble"></i></a></li>
                         </ul>
-                        <a href="login" className="a">Login</a>
+                        <div className="a"><Link href="login" passHref>Login</Link></div>
                     </div>
                     </div>
                 </div>
                 </div>
             </div>
-            <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
+            <Navbar color="faded" light expand="md">
+                <NavbarBrand onClick={() => router.push('/')}>NextStarter</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <NavLink href="/">Home</NavLink>
+                        <Link href="/" passHref>Home</Link>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/about">About</NavLink>
+                        <Link href="/about" passHref>About</Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link href="/about" passHref>Our Service</Link>
                     </NavItem>
                     {/* <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
